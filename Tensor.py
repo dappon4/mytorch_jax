@@ -4,9 +4,9 @@ import jax.numpy as jnp
 import random
 
 class Tensor:
-    def __init__(self, tensor, prev=None, grad_fns=None) -> None:
+    def __init__(self, tensor, prev=None, grad_fn=None) -> None:
         self.tensor = tensor
-        self.grad_fns = grad_fns
+        self.grad_fns = grad_fn
         self.shape = tensor.shape
         
         if not prev:

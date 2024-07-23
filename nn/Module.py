@@ -1,7 +1,7 @@
 import jax.numpy as jnp
 from jax import grad, jit, vmap
 
-class Module():
+class Module:
     def __init__(self) -> None:
         self.training = True
     

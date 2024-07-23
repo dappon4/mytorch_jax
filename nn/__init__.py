@@ -1,2 +1,2 @@
-from Module import Module
-from Linear import Linear
+from .Module import Module
+from .Linear import Linear
