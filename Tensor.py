@@ -29,10 +29,13 @@ class Tensor:
     def __rmul__(self, num):
         return self.__mul__(num)
     
-    def backward(self, grad):
-        if self.grad_fn:
+    def backward(self, grad, lr):
+        if self.prev:
             for pair in zip(self.prev, self.grad_fn(grad)):
                 pair[0].backward(pair[1])
+        
+        else:
+            self.tensor -= lr * grad
     
     @staticmethod            
     def zeros(*shape):
